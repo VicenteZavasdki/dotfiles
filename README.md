@@ -28,11 +28,14 @@ My CachyOS + Sway development environment configuration.
 ## Quick Install
 
 ```bash
-# Clone
 git clone https://github.com/VicenteZavasdki/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
+./install.sh
+```
 
-# Symlink configs
+## Manual Install
+
+```bash
 ln -sf ~/.dotfiles/fish/config.fish ~/.config/fish/config.fish
 ln -sf ~/.dotfiles/ghostty/config ~/.config/ghostty/config
 ln -sf ~/.dotfiles/sway/config ~/.config/sway/config
@@ -43,6 +46,7 @@ ln -sf ~/.dotfiles/dunst/dunstrc ~/.config/dunst/dunstrc
 ln -sf ~/.dotfiles/zellij/config.kdl ~/.config/zellij/config.kdl
 ln -sf ~/.dotfiles/atuin/config.toml ~/.config/atuin/config.toml
 ln -sf ~/.dotfiles/nvim/init.lua ~/.config/nvim/init.lua
+ln -sf ~/.dotfiles/.editorconfig ~/.editorconfig
 ```
 
 ## Theme
