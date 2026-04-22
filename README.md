@@ -2,6 +2,8 @@
 
 My CachyOS + Sway development environment configuration.
 
+[![Validate Dotfiles](https://github.com/VicenteZavasdki/dotfiles/actions/workflows/validate.yml/badge.svg)](https://github.com/VicenteZavasdki/dotfiles/actions/workflows/validate.yml)
+
 ## Stack
 
 - **WM**: Sway (Wayland)
@@ -10,6 +12,7 @@ My CachyOS + Sway development environment configuration.
 - **Bar**: Waybar
 - **Notifications**: Dunst
 - **Multiplexer**: Zellij
+- **Editor**: Neovim
 
 ## Tools
 
@@ -39,6 +42,7 @@ ln -sf ~/.dotfiles/git/config ~/.gitconfig
 ln -sf ~/.dotfiles/dunst/dunstrc ~/.config/dunst/dunstrc
 ln -sf ~/.dotfiles/zellij/config.kdl ~/.config/zellij/config.kdl
 ln -sf ~/.dotfiles/atuin/config.toml ~/.config/atuin/config.toml
+ln -sf ~/.dotfiles/nvim/init.lua ~/.config/nvim/init.lua
 ```
 
 ## Theme
@@ -46,6 +50,10 @@ ln -sf ~/.dotfiles/atuin/config.toml ~/.config/atuin/config.toml
 - **Colors**: Catppuccin Mocha (terminal) + Dracula (fish prompt)
 - **Font**: JetBrains Mono
 - **WM**: No borders, minimal gaps
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## License
 

@@ -1,0 +1,1 @@
+/home/zavasdki/.local/share/neovim/titus-kickstart/init.lua
