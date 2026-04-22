@@ -1,0 +1,25 @@
+# Ghostty Configuration - Zavasdki Setup
+
+# === Theme ===
+theme = "Catppuccin Mocha"
+
+# === Font ===
+font-family = "JetBrains Mono"
+font-size = 12
+
+# === Window ===
+window-decoration = false
+window-padding-x = 5
+window-padding-y = 5
+
+# === Cursor ===
+cursor-style = block
+
+# === Scrollback ===
+scrollback-limit = 100000
+
+# === Copy/Paste ===
+copy-on-select = true
+
+# === Shell ===
+shell-integration-features = cursor,title

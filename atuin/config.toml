@@ -1,0 +1,9 @@
+# Atuin Config - Local Only
+
+db_path = "~/.local/share/atuin/db.db"
+
+[sync]
+enabled = false
+
+[history]
+filter = ["^exit", "^ssh"]
