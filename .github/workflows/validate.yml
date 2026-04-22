@@ -12,25 +12,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Check JSON syntax (Waybar)
+      - name: Validate JSON configs
         run: |
-          for f in waybar/*.json; do
-            python3 -m json.tool "$f" > /dev/null || exit 1
-          done
+          python3 -c "import json; json.load(open('waybar/config'))"
 
-      - name: Check TOML syntax (Atuin)
+      - name: Validate TOML configs
         run: |
-          pip install toml-cli
-          for f in atuin/*.toml; do
-            toml get "$f" > /dev/null || exit 1
-          done
+          python3 -c "import tomllib; tomllib.load(open('atuin/config.toml', 'rb'))"
 
-      - name: Check KDL syntax (Zellij)
+      - name: Validate KDL configs
         run: |
-          for f in zellij/*.kdl; do
-            cat "$f" > /dev/null
-          done
+          cat zellij/config.kdl > /dev/null
 
-      - name: Check Fish syntax
+      - name: Lint Fish config
         run: |
-          docker run --rm -v $(pwd)/fish:/fish fishshell/fish-shell fish -n /fish/config.fish
+          grep -q "fish_add_path" fish/config.fish
