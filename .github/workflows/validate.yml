@@ -1,0 +1,36 @@
+name: Validate Dotfiles
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check JSON syntax (Waybar)
+        run: |
+          for f in waybar/*.json; do
+            python3 -m json.tool "$f" > /dev/null || exit 1
+          done
+
+      - name: Check TOML syntax (Atuin)
+        run: |
+          pip install toml-cli
+          for f in atuin/*.toml; do
+            toml get "$f" > /dev/null || exit 1
+          done
+
+      - name: Check KDL syntax (Zellij)
+        run: |
+          for f in zellij/*.kdl; do
+            cat "$f" > /dev/null
+          done
+
+      - name: Check Fish syntax
+        run: |
+          docker run --rm -v $(pwd)/fish:/fish fishshell/fish-shell fish -n /fish/config.fish
